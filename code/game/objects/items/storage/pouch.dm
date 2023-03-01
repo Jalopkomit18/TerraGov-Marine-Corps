@@ -609,7 +609,8 @@
 	if(!remove_from_storage(W, null, user))
 		return FALSE
 	return W
-
+	
+	
 /obj/item/storage/pouch/flare/attackby_alternate(obj/item/I, mob/user, params)
 	if(!istype(I, /obj/item/weapon/gun/grenade_launcher/single_shot/flare))
 		return ..()
