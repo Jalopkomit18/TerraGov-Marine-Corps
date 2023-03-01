@@ -58,12 +58,14 @@ The Grenade Launchers
 
 	///the maximum range the launcher can fling the grenade, by default 15 tiles
 	var/max_range = 15
+	///must be greater than this value to shoot launcher
+	var/min_range = 2
 
 /obj/item/weapon/gun/grenade_launcher/able_to_fire(mob/user)
 	. = ..()
 	if(!.)
 		return FALSE
-	if(get_dist(target, gun_user) <= 2)
+	if(get_dist(target, gun_user) <= min_range)
 		to_chat(gun_user, span_warning("[src] beeps a warning noise. You are too close!"))
 		return FALSE
 
@@ -221,6 +223,7 @@ The Grenade Launchers
 	allowed_ammo_types = list(/obj/item/explosive/grenade/flare, /obj/item/explosive/grenade/flare/cas)
 	attachable_allowed = list(/obj/item/attachable/scope/unremovable/flaregun)
 	starting_attachment_types = list(/obj/item/attachable/scope/unremovable/flaregun)
+	min_range = 0
 
 /obj/item/weapon/gun/grenade_launcher/single_shot/flare/marine
 	name = "M30E2 flare gun"

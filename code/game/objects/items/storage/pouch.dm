@@ -582,6 +582,7 @@
 	max_w_class = 1
 	storage_slots = 28
 	max_storage_space = 28
+	draw_mode = 1
 	icon_state = "flare"
 	storage_type_limits = list(/obj/item/weapon/gun/grenade_launcher/single_shot/flare = 1)
 	bypass_w_limit = list(/obj/item/weapon/gun/grenade_launcher/single_shot/flare)
